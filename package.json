@@ -1,0 +1,20 @@
+{
+
+  "private": "true",
+
+  "workspaces": [
+
+    "shared"
+
+  ],
+
+  "dependencies": {
+
+    "node.js": "^0.0.1-security",
+
+    "zod": "^4.6.7"
+
+  }
+
+}
+
