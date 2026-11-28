@@ -1,3 +1,4 @@
+// Erro com status HTTP: o middleware global transforma em resposta { mensagem }
 export class ErroHttp extends Error {
   status: number;
 

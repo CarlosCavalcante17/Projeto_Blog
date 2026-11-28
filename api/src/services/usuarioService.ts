@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import * as usuarioRepository from "../repositories/usuarioRepository.js";
-import { ErroHttp } from "../src/erros.js";
+import { ErroHttp } from "../erros.js";
 import type { CadastroUsuarioInput } from "@blog/shared/usuario";
 
 const SALT_ROUNDS = 10;

@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Autor {
+  id           Int      @id @default(autoincrement())
+  nome         String
+  email        String   @unique
+  bio          String
+  criadoEm     DateTime @default(now()) @map("criado_em")
+  atualizadoEm DateTime @updatedAt @map("atualizado_em")
+  posts        Post[]
+
+  @@map("autores")
+}
+
+model Categoria {
+  id           Int      @id @default(autoincrement())
+  nome         String   @unique
+  descricao    String
+  criadoEm     DateTime @default(now()) @map("criado_em")
+  atualizadoEm DateTime @updatedAt @map("atualizado_em")
+  posts        Post[]
+
+  @@map("categorias")
+}
+
+// Post aponta para duas tabelas: o autor e a categoria
+model Post {
+  id           Int          @id @default(autoincrement())
+  titulo       String
+  conteudo     String
+  publicado    Boolean      @default(false)
+  autorId      Int          @map("autor_id")
+  categoriaId  Int          @map("categoria_id")
+  criadoEm     DateTime     @default(now()) @map("criado_em")
+  atualizadoEm DateTime     @updatedAt @map("atualizado_em")
+
+  autor        Autor        @relation(fields: [autorId], references: [id], onDelete: Cascade)
+  categoria    Categoria    @relation(fields: [categoriaId], references: [id], onDelete: Cascade)
+  comentarios  Comentario[]
+
+  @@map("posts")
+}
+
+model Comentario {
+  id           Int      @id @default(autoincrement())
+  leitor       String
+  texto        String
+  postId       Int      @map("post_id")
+  criadoEm     DateTime @default(now()) @map("criado_em")
+  atualizadoEm DateTime @updatedAt @map("atualizado_em")
+
+  post         Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@map("comentarios")
+}
+
+// Tabela só para o login (não conta nas 4 tabelas do sistema)
+model Usuario {
+  id           Int      @id @default(autoincrement())
+  nome         String
+  email        String   @unique
+  senha        String
+  criadoEm     DateTime @default(now()) @map("criado_em")
+  atualizadoEm DateTime @updatedAt @map("atualizado_em")
+
+  @@map("usuarios")
+}

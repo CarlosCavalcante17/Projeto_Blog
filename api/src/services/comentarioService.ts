@@ -1,6 +1,6 @@
 import * as comentarioRepository from "../repositories/comentarioRepository.js";
 import * as postService from "./postService.js";
-import { ErroHttp } from "../src/erros.js";
+import { ErroHttp } from "../erros.js";
 import type { ComentarioInput } from "@blog/shared/comentario";
 
 export async function listarComentarios() {
