@@ -1,17 +1,21 @@
 import type { Request, Response, NextFunction } from "express";
-import { ErroHttp } from "../src/erros.js";
+import { ErroHttp } from "../erros.js";
 
+// Último middleware: todo erro lançado nas camadas cai aqui
 export function tratarErros(err: unknown, req: Request, res: Response, next: NextFunction) {
   void next;
 
+  // Erros que nós mesmos lançamos (404, 409, 400...)
   if (err instanceof ErroHttp) {
     return res.status(err.status).json({ mensagem: err.message });
   }
 
+  // JSON malformado no corpo da requisição (erro do express.json)
   if ((err as { type?: string }).type === "entity.parse.failed") {
     return res.status(400).json({ mensagem: "O corpo da requisição não é um JSON válido" });
   }
 
+  // Erros do Prisma têm um "code": usamos como rede de segurança
   const codigo = (err as { code?: string }).code;
   if (codigo === "P2002") {
     return res.status(409).json({ mensagem: "Já existe um registro com esse valor único" });

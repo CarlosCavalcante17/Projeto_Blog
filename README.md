@@ -1,6 +1,6 @@
 # 📝 Blog — Sistema Web Completo
 
-🎥 **Vídeo de apresentação:** [COLE AQUI O LINK DO VÍDEO](https://)
+🎥 **Vídeo de apresentação:** [https://youtu.be/gWK-HC_R45s](https://)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
@@ -18,10 +18,8 @@ Projeto final de **Desenvolvimento Web (A2)**: um sistema de blog construído do
 
 | Nome completo | RGM | O que fez |
 | :--- | :--- | :--- |
-| Carlos Cavalcante | _RGM_ | _descreva aqui_ |
-| _Nome completo_ | _RGM_ | _descreva aqui_ |
-| _Nome completo_ | _RGM_ | _descreva aqui_ |
-| _Nome completo_ | _RGM_ | _descreva aqui_ |
+| Carlos Cavalcante | 41602102 | Back-end |
+| Nelson Suassuna | 42785651 | Front-end e parte do back |
 
 ---
 

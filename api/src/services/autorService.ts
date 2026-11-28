@@ -1,5 +1,5 @@
 import * as autorRepository from "../repositories/autorRepository.js";
-import { ErroHttp } from "../src/erros.js";
+import { ErroHttp } from "../erros.js";
 import type { AutorInput } from "@blog/shared/autor";
 
 export async function listarAutores() {

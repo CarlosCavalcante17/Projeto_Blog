@@ -2,15 +2,15 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
-import { swaggerSpec } from "../config/swagger.js";
-import { tratarErros } from "../middlewares/tratarErros.js";
+import { swaggerSpec } from "./config/swagger.js";
+import { tratarErros } from "./middlewares/tratarErros.js";
 
-import autorRoutes from "../routes/autorRoutes.js";
-import categoriaRoutes from "../routes/categoriaRoutes.js";
-import postRoutes from "../routes/postRoutes.js";
-import comentarioRoutes from "../routes/comentarioRoutes.js";
-import usuarioRoutes from "../routes/usuarioRoutes.js";
-import authRoutes from "../routes/authRoutes.js";
+import autorRoutes from "./routes/autorRoutes.js";
+import categoriaRoutes from "./routes/categoriaRoutes.js";
+import postRoutes from "./routes/postRoutes.js";
+import comentarioRoutes from "./routes/comentarioRoutes.js";
+import usuarioRoutes from "./routes/usuarioRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 

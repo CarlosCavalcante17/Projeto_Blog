@@ -1,7 +1,7 @@
 import * as postRepository from "../repositories/postRepository.js";
 import * as autorService from "./autorService.js";
 import * as categoriaService from "./categoriaService.js";
-import { ErroHttp } from "../src/erros.js";
+import { ErroHttp } from "../erros.js";
 import type { PostInput } from "@blog/shared/post";
 
 // O autor e a categoria informados precisam existir

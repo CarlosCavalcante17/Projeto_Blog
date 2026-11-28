@@ -1,5 +1,5 @@
 import * as categoriaRepository from "../repositories/categoriaRepository.js";
-import { ErroHttp } from "../src/erros.js";
+import { ErroHttp } from "../erros.js";
 import type { CategoriaInput } from "@blog/shared/categoria";
 
 export async function listarCategorias() {
